@@ -1,0 +1,10 @@
+{
+  "updates": [
+    {
+      "versionCode": 2,
+      "versionNumber": "1.0.1",
+      "changelog": "Bug fix",
+      "apkUrl": "https://example.com/latest.apk"
+    }
+  ]
+}
