@@ -48,6 +48,7 @@ dependencies {
 
     implementation(libs.kotlinx.serialization.json)
     testImplementation(libs.junit)
+    testImplementation("io.ktor:ktor-client-mock:$ktor_version")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

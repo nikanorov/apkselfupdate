@@ -5,14 +5,15 @@ import com.nikanorov.apkselfupdate.util.flowRequest
 import com.nikanorov.apkselfupdate.value.APKSelfUpdateInfoResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
+import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.request.get
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-internal class API(private val url: String) {
-    private val client = HttpClient(CIO) {
+internal class API(private val url: String, engine: HttpClientEngine = CIO.create()) {
+    private val client = HttpClient(engine) {
         expectSuccess = true
 
         install(ContentNegotiation) {
